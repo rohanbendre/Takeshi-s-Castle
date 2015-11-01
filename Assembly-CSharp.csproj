@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\MazeRoomSettings.cs" />
      <Compile Include="Assets\Scripts\MazeWall.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\TreasureBox.cs" />
      <Compile Include="Assets\walk.cs" />
      <None Include="Assets\Cha_Data\Shader\WrapLambert.shader" />
  <Reference Include="UnityEngine.Networking">

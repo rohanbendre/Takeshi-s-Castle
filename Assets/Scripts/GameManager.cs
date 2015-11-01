@@ -7,9 +7,13 @@ public class GameManager : MonoBehaviour {
 
 	public Player playerPrefab;
 
+	public TreasureBox treasurePrefab;
+
 	private Maze mazeInstance;
 
 	private Player playerInstance;
+
+	private TreasureBox treasurebox;
 
 	private void Start () {
 		StartCoroutine(BeginGame());
@@ -28,6 +32,10 @@ public class GameManager : MonoBehaviour {
 		yield return StartCoroutine(mazeInstance.Generate());
 		playerInstance = Instantiate(playerPrefab) as Player;
 		playerInstance.SetLocation(mazeInstance.GetCell(mazeInstance.RandomCoordinates));
+		treasurebox = Instantiate(treasurePrefab) as TreasureBox;
+		treasurebox.SetLocation(mazeInstance.GetCell(mazeInstance.RandomCoordinates));
+//		treasurebox = Instantiate(treasurePrefab) as TreasureBox;
+//		treasurebox.SetLocation(mazeInstance.GetCell(mazeInstance.RandomCoordinates));
 		Camera.main.clearFlags = CameraClearFlags.Depth;
 		Camera.main.rect = new Rect(0f, 0f, 0.5f, 0.5f);
 	}
